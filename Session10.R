@@ -59,3 +59,38 @@ cat(headers)
 
 bodies = str_sub(emails,breaks[,2])
 cat(bodies)
+
+
+###Second Lab
+
+#1.
+fruit = c("apple", "banana", "pear","pinappple")
+
+#2.
+#detect the pattern is found
+str_detect(fruit, "a")
+#pattern starts with a
+str_detect(fruit,"^a")
+#pattern ends with an a
+str_detect(fruit, "a$")
+
+#pattenr to check if it has
+str_detect(fruit, "[aeiou]")
+
+str_detect(fruit,"[a-d]")
+
+str_detect(fruit, "[0-9]")
+
+#3
+# "." could be any character or number
+str_detect(fruit,"^a[a-z]*e$")
+str_detect(fruit, "^a.*e$")
+
+#4
+phone = c("213 740 4826", 
+          "213-740-4826",
+          "(213) 740 4826")
+str_detect(phone,"[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+
+str_extract_all(bodies,"[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+           
