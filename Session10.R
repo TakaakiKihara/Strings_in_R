@@ -1,0 +1,61 @@
+library(stringr)
+
+#1. "\" works as escape. Cancel function of its code.
+print("DSO")
+print("\"")
+cat("\"")
+cat("DSO\n545")
+cat("DSO\t545")
+
+#2.
+cat(":-\\")
+cat("(^_^\")")
+cat("@_'-'")
+cat("\\m/")
+
+
+#3.
+?str_locate
+?str_sub
+
+#4.
+str_locate(string = "great", pattern = "a")
+str_locate(string = "fantastic", pattern = "a")
+str_locate_all(string = "fantastic", pattern = "a")
+str_locate(string = "super", pattern = "a")
+
+str_locate(c("fantastic", "great", "super"), "a")
+
+#5.
+str_sub("testing",1,3)
+str_sub("testing",4)
+str_sub("testing",1,4)
+
+str_extract("testing",1)
+
+#6.
+input <- c("abc","defg")
+str_sub(input, c(2,3))            
+
+#7.
+emails <- readRDS("email.rds")
+
+cat(emails[1])
+
+#7.
+str_locate(emails[1], "\n\n")
+
+#8.
+header = str_sub(emails[1],1,842)
+cat(header)
+
+cat(str_sub(emails[1],1,842))
+cat(str_sub(emails[1],843))
+
+#10
+breaks = str_locate(emails, "\n\n")
+headers = str_sub(emails,1,breaks[,1])
+cat(headers)
+
+bodies = str_sub(emails,breaks[,2])
+cat(bodies)
